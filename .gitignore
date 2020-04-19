@@ -21,3 +21,18 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+*.iml
+.gradle
+Motivator/local.properties
+Motivator/.idea/caches
+Motivator/.idea/libraries
+Motivator/.idea/modules.xml
+Motivator/.idea/workspace.xml
+Motivator/.idea/navEditor.xml
+Motivator/.idea/assetWizardSettings.xml
+.DS_Store
+Motivator/build
+Motivator/captures
+.externalNativeBuild
+.cxx
