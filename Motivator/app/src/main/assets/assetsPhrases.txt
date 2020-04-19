@@ -1,0 +1,6 @@
+Phrase1;5
+Phrase2;10
+Phrase3;15
+Phrase4;25
+Phrase5;1
+Phrase6;32
