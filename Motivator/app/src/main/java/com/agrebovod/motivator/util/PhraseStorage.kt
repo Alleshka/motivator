@@ -4,6 +4,7 @@ import com.agrebovod.motivator.interfaces.IFileStorage
 import com.agrebovod.motivator.interfaces.IFileWorker
 import com.agrebovod.motivator.model.FileInfo
 import com.agrebovod.motivator.model.Phrase
+import kotlin.random.Random
 
 class PhraseStorage(private val fileWorker: IFileWorker) : IFileStorage {
 
@@ -24,7 +25,7 @@ class PhraseStorage(private val fileWorker: IFileWorker) : IFileStorage {
     }
 
     override fun getRandPhase(): String? {
-        val randNumber = (0..100).random()
+        val randNumber = Random.nextDouble(0.0, 100.0);
         val phrase: Phrase? = this.phraseList.find { it.isCurRage(randNumber.toDouble()) }
 
         if (phrase != null) {

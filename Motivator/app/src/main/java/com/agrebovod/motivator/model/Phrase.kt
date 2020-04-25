@@ -19,7 +19,6 @@ class Phrase {
         phrase = items[0]
         probability = items[1].toDouble()
         showCount = if (items.count() >= 3) items[2].toInt() else 0
-
         weight = calculateWeight(maxShowCount)
         curProbability = 0.0
         minRage = 0.0

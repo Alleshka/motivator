@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Motivator</string>
     <string name="btn_next">Ещё фразу</string>
+    <string name="start_text">Нажми</string>
+    <string name="hearth">0x2764</string>
+    <string name="imageDescription">Image</string>
 </resources>

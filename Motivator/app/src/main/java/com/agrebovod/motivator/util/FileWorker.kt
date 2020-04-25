@@ -16,7 +16,16 @@ class FileWorker(val context: Context) : IFileWorker {
     private val phrasesFileName = "phraseList.txt"
 
     override fun saveFile(fileInfo: FileInfo, phrases: List<Phrase>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        context.openFileOutput(this.phrasesFileName, Context.MODE_PRIVATE).bufferedWriter().use {
+            for (phrase in phrases) {
+                it.write(phrase.toString())
+                it.newLine()
+            }
+        }
+
+        context.openFileOutput(this.metaInfoFileName, Context.MODE_PRIVATE).bufferedWriter().use {
+            it.write(fileInfo.toString())
+        }
     }
 
     override fun saveFile(data: MotivatorData) {
