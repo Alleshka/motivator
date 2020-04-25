@@ -57,17 +57,42 @@ class MainActivity : AppCompatActivity() {
     private fun textChange(text: TextView) {
         text.text = phraseStorage.getRandPhase()
         val layout = findViewById<ConstraintLayout>(R.id.mainLayout)
+
         text.x = (0..layout.width - text.width).random().toFloat()
         text.y = (0..layout.height - text.height).random().toFloat()
     }
 
     private fun fadeOut(text: View) {
+        val layout = findViewById<ConstraintLayout>(R.id.mainLayout)
 
         text.animate()
             .setDuration(this.duration)
             .alpha(1f)
             .withEndAction {
                 text.alpha = 1f
+
+                if (text.x + text.width > layout.width || text.y + text.height > layout.height || text.x < 0 || text.y < 0) {
+                    var newX = 0f
+                    if (text.x + text.width > layout.width) newX =
+                        (layout.width.toFloat() - text.width)
+                    else if (text.x < 0) newX = 10f
+                    else newX = text.x
+
+                    var newY = 0f
+                    if (text.y + text.height > layout.height) newY =
+                        layout.height.toFloat() - text.height
+                    else if (text.y < 0) newY = 10f
+                    else newY = text.y
+
+                    text.animate()
+                        .translationXBy(newX - text.x)
+                        .translationYBy(newY - text.y)
+                        .setDuration(1000)
+                        .withEndAction {
+                            text.x = newX
+                            text.y = newY
+                        }
+                }
             }
     }
 

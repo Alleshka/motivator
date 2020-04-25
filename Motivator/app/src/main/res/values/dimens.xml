@@ -1,3 +1,4 @@
 <resources>
     <dimen name="text_size">25sp</dimen>
+    <dimen name="max_width">300dp</dimen>
 </resources>
