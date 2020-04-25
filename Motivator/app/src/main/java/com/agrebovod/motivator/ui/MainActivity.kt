@@ -105,7 +105,9 @@ class MainActivity : AppCompatActivity() {
             R.drawable.h3,
             R.drawable.h4,
             R.drawable.h5,
-            R.drawable.h6
+            R.drawable.h6,
+            R.drawable.h7,
+            R.drawable.h8
         )
 
         // TODO: Можно попробовать создавать программно
